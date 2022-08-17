@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:OrdersInSecondsMovile.Controls"
+             mc:Ignorable="d"
+             x:Class="OrdersInSecondsMovile.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="1" HorizontalOptions="Center">
+                    <Image 
+                        Margin="70,70,70,100" 
+                        HeightRequest="100" 
+                        HorizontalOptions="Center"
+                        Source="logo.png" 
+                        WidthRequest="300" />
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="2" 
+                    HorizontalOptions="Center">
+                    <Label 
+                        FontAttributes="Bold" 
+                        FontSize="Medium" 
+                        Text="LOGIN"
+                        TextColor="White" />
+                </StackLayout>
+
+
+                <StackLayout 
+                    Grid.Row="4" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="200" 
+                    Orientation="Horizontal">
+                    <controls:StandardEntry
+                        Margin="0,0,0,10"
+                        WidthRequest="200"
+                        Padding="13"
+                        BackgroundColor="#4260A7"
+                        BorderColor="#FFFFFF"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        Placeholder="Usuario"
+                        PlaceholderColor="White"
+                         Text="{Binding InsertarUsuario.first_name, Mode=TwoWay}"/>
+
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="5" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="200" 
+                    Orientation="Horizontal">
+                    <controls:StandardEntry
+                        Margin="0,0,0,20"
+                         WidthRequest="200"
+                        Padding="13"
+                        BackgroundColor="#4260A7"
+                        BorderColor="#FFFFFF"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        IsPassword ="True"
+                        Placeholder="Password"
+                        PlaceholderColor="White"
+                         Text="{Binding InsertarUsuario.first_name, Mode=TwoWay}"/>
+
+
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="6" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="300" 
+                    Orientation="Horizontal">
+
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="7" 
+                    HorizontalOptions="Center" 
+                    Orientation="Vertical" 
+                    Margin="15">
+                    <Button 
+                        BackgroundColor="Black" 
+                        CornerRadius="7" 
+                        Text="LOGIN"
+                        TextColor="#FFFF" 
+                        HorizontalOptions="End"
+                        TranslationY="-20" 
+                        WidthRequest="120" 
+                        HeightRequest="40" 
+                        Command="{Binding LoginCommand}" 
+                        CommandParameter="Login" />
+
+                </StackLayout>
+
+                <StackLayout 
+                    Grid.Row="8" 
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    Orientation="Horizontal">
+              
+                    <Button  
+                        Text="Registrarse" 
+                        TextColor="White" 
+                        WidthRequest="99" 
+                        HeightRequest="47" 
+                        FontSize="11" 
+                        CornerRadius="7" 
+                        BackgroundColor="#474646"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="End" 
+                        Command="{Binding ButtonCommand}" 
+                        CommandParameter="Registrar" >
+                       
+                    </Button>
+                    
+                    
+
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="9" 
+                                 HorizontalOptions="Center"  
+                                 Orientation="Vertical" 
+                                 Margin="15">
+
+                    <!--<Button Text="Autenticarse" BackgroundColor="#F3F3F3" 
+                                Command="{Binding ButtonCommand}" CommandParameter="LectorHuella"/>-->
+
+
+                </StackLayout>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
