@@ -121,11 +121,11 @@ namespace OrdersInSecondsMovile.Repositories
             return null ;
         }
 
-        public DataApiModelSQLite GetProduct(string Title)
+        public DataApiModelSQLite GetProduct(int id)
         {
             try
             {
-                return connection.Table<DataApiModelSQLite>().FirstOrDefault(x => x.title == Title);
+                return connection.Table<DataApiModelSQLite>().FirstOrDefault(x => x.id == id);
             }
             catch (Exception ex)
             {

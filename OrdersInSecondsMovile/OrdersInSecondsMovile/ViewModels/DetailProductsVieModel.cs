@@ -6,20 +6,20 @@ using Xamarin.Forms;
 
 namespace OrdersInSecondsMovile.ViewModels
 {
-    [QueryProperty(nameof(Title), nameof(Title))]
+    [QueryProperty(nameof(Id), nameof(Id))]
     public class DetailProductsVieModel :BaseViewModel
     {
         #region property
-        private string title;
-        public string Title
+        private int id;
+        public int  Id
         {
             get
             {
-                return title;
+                return id;
             }
             set
             {
-                title = value;
+                id = value;
                 LoadItemId(value);
             }
         }
@@ -66,11 +66,11 @@ namespace OrdersInSecondsMovile.ViewModels
 
         #endregion
         #region constructor
-        public async void LoadItemId(string Title)
+        public async void LoadItemId(int id)
         {
             try
             {
-                var items = App.AddDataRepository.GetProduct(Title);
+                var items = App.AddDataRepository.GetProduct(id);
                 NameProduct = items.title;
                 Image = items.image;
                 Price = items.price.ToString();

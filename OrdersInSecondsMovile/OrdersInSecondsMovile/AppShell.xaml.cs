@@ -11,11 +11,8 @@ namespace OrdersInSecondsMovile
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
 
             Routing.RegisterRoute(nameof(DetailProductsView), typeof(DetailProductsView));
-            
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

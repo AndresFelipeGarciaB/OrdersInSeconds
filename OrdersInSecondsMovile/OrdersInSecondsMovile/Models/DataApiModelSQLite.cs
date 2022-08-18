@@ -9,7 +9,7 @@ namespace OrdersInSecondsMovile.Models
 
     public class DataApiModelSQLite
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int id { get; set; }
         public string title { get; set; }
         public double price { get; set; }

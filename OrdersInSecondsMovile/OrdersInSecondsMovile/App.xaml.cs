@@ -1,5 +1,5 @@
 ﻿using OrdersInSecondsMovile.Repositories;
-using OrdersInSecondsMovile.Services;
+
 using OrdersInSecondsMovile.Views;
 using System;
 using Xamarin.Forms;
@@ -14,7 +14,7 @@ namespace OrdersInSecondsMovile
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             MainPage = new LoginPage(); //AppShell();
         }
 

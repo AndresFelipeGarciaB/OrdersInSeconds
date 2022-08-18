@@ -14,6 +14,7 @@ namespace OrdersInSecondsMovile.ViewModels
     {
         private DataApiModel _selectedItem;
         #region Commands
+        public Command buttonSearch { get; set; }
 
         public ObservableCollection<DataApiModel> Items { get; }
         public Command LoadItemsCommand { get; }
@@ -22,7 +23,7 @@ namespace OrdersInSecondsMovile.ViewModels
         #endregion
 
         #region Property
-        
+       
         #endregion
 
         public ListProductsViewModel()
@@ -32,8 +33,10 @@ namespace OrdersInSecondsMovile.ViewModels
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
             ItemTapped = new Command<DataApiModel>(OnItemSelected);
+            buttonSearch = new Command(SearchProduct);
 
-            
+
+
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -55,6 +58,7 @@ namespace OrdersInSecondsMovile.ViewModels
                     };            
 
                     var itemModel = new DataApiModel() { 
+                        id = item.id,
                                 title= item.title,
                                 price = item.price,
                                 description = item.description,
@@ -76,6 +80,17 @@ namespace OrdersInSecondsMovile.ViewModels
             }
         }
 
+        public void SearchProduct()
+        {
+            try
+            {
+
+
+            }catch(Exception ex)
+            {
+
+            }
+        }
         public void OnAppearing()
         {
             IsBusy = true;
@@ -86,7 +101,7 @@ namespace OrdersInSecondsMovile.ViewModels
             get => _selectedItem;
             set
             {
-                SetProperty(ref _selectedItem, value);
+                SetProperty(ref _selectedItem, value);  
                 OnItemSelected(value);
             }
         }
@@ -98,7 +113,7 @@ namespace OrdersInSecondsMovile.ViewModels
                 return;
             try
             {
-                await Shell.Current.GoToAsync($"{nameof(DetailProductsView)}?{nameof(DetailProductsVieModel.Title)}={item.title}");
+                await Shell.Current.GoToAsync($"{nameof(DetailProductsView)}?{nameof(DetailProductsVieModel.Id)}={item.id}");
             }
             catch (Exception ex)
             {

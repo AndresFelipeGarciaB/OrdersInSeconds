@@ -25,5 +25,10 @@ namespace OrdersInSecondsMovile.Views
             base.OnAppearing();
             _viewModel.OnAppearing();
         }
+        void Handle_SearchButtonPressed(object sender, System.EventArgs e)
+        {
+            var countriesSearched = _viewModel.Items.Where(c => c.title.Contains(searchBar.Text));
+            ItemsListView.ItemsSource = countriesSearched;
+        }
     }
 }

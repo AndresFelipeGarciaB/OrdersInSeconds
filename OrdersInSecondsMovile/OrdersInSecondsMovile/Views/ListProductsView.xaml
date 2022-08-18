@@ -21,33 +21,11 @@
             </Grid.ColumnDefinitions>
             
             <StackLayout Grid.Row="1" >
-                
-                <controls:StandardEntry 
-                    Grid.Column="1"
-                    Margin="100,0,125,0"
-                    WidthRequest="100"
-                    HeightRequest="45"
-                    Padding="0"
-                    BackgroundColor="{StaticResource Primary}"
-                    BorderColor="#FF0000"
-                    BorderThickness="1"
-                    CornerRadius="8"
-                    Placeholder="Search"
-                    PlaceholderColor="#BAB5B5"
-                    Text="{Binding User.user, Mode=TwoWay}"/>                
 
-                <Button 
-                     Grid.Column="2"
-                    BackgroundColor="{StaticResource Primary}" 
-                    CornerRadius="7" 
-                    TextColor="#FFFF" 
-                    HorizontalOptions="End"
-                    TranslationY="-53" 
-                    WidthRequest="100" 
-                    HeightRequest="48" 
-                    Image ="search.png"
-                    Command="{Binding LoginCommand}" 
-                    CommandParameter="Buscar" />
+                <SearchBar x:Name = "searchBar"  
+                           WidthRequest="200"
+                 TextChanged ="Handle_SearchButtonPressed"
+                 BackgroundColor="Transparent"/>
 
             </StackLayout>
 
