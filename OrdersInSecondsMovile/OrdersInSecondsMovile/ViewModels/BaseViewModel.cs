@@ -11,6 +11,7 @@ namespace OrdersInSecondsMovile.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        //public IDataProduct<DataApiModelSQLite> IDataProduct => DependencyService.Get<IDataProduct<DataApiModelSQLite>>();
         public INavigation Navigation { get; set; }
 
         bool isBusy = false;

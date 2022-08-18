@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:OrdersInSecondsMovile.ViewModels" 
+             xmlns:model="clr-namespace:OrdersInSecondsMovile.Models" 
+             xmlns:controls="clr-namespace:OrdersInSecondsMovile.Controls"
+             x:Class="OrdersInSecondsMovile.Views.ListProductsView"
+             Title="Productos">
+
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackLayout Grid.Row="1" >
+                
+                <controls:StandardEntry 
+                    Grid.Column="1"
+                    Margin="100,0,125,0"
+                    WidthRequest="100"
+                    HeightRequest="45"
+                    Padding="0"
+                    BackgroundColor="{StaticResource Primary}"
+                    BorderColor="#FF0000"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    Placeholder="Search"
+                    PlaceholderColor="#BAB5B5"
+                    Text="{Binding User.user, Mode=TwoWay}"/>                
+
+                <Button 
+                    BackgroundColor="{StaticResource Primary}" 
+                    CornerRadius="7" 
+                    TextColor="#FFFF" 
+                    HorizontalOptions="End"
+                    TranslationY="-53" 
+                    WidthRequest="100" 
+                    HeightRequest="48" 
+                    Image ="search.png"
+                    Command="{Binding LoginCommand}" 
+                    CommandParameter="Buscar" />
+
+            </StackLayout>
+
+            <RefreshView Grid.Row="2"  x:DataType="local:ListProductsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView Grid.Row="2" x:Name="ItemsListView"
+            ItemsSource="{Binding Items}"
+            SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" x:DataType="model:DataApiModelSQLite">
+
+                                <Image Source="{Binding image}"                                       
+                                       HeightRequest="40"   
+                                        />
+
+                                <Label Text="{Binding title}" 
+                        LineBreakMode="NoWrap" 
+                        Style="{DynamicResource ListItemTextStyle}" 
+                        FontSize="16" />
+
+                                <Label Text="{Binding description}" 
+                        LineBreakMode="NoWrap"
+                        Style="{DynamicResource ListItemDetailTextStyle}"
+                        FontSize="13" />
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                            NumberOfTapsRequired="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                            CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

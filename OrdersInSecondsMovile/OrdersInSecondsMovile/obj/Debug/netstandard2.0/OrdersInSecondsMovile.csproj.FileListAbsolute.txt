@@ -8,8 +8,10 @@ C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\Orders
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\ListProductsView.xaml.g.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\PopUpRegister.xaml.g.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\OrdersInSecondsMovile.AssemblyInfoInputs.cache
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\OrdersInSecondsMovile.AssemblyInfo.cs
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\OrdersInSecondsMovile.csproj.CoreCompileInputs.cache
@@ -18,4 +20,3 @@ C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\Orders
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\refint\OrdersInSecondsMovile.dll
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\OrdersInSecondsMovile.pdb
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\ref\OrdersInSecondsMovile.dll
-C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\PopUpRegister.xaml.g.cs

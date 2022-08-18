@@ -4,6 +4,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OrdersInSecondsMovile.Repositories
 {
@@ -107,6 +108,19 @@ namespace OrdersInSecondsMovile.Repositories
 
             return false;
         }
+        public List<DataApiModelSQLite> GetAllData()
+        {
+            try
+            {
+                return connection.Table<DataApiModelSQLite>().ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null ;
+        }
+
 
         #endregion
     }
