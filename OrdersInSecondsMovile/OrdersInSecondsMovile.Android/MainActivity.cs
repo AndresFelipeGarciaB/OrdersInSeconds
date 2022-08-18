@@ -12,6 +12,7 @@ namespace OrdersInSecondsMovile.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Rg.Plugins.Popup.Popup.Init(this);
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);

@@ -18,3 +18,4 @@ C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\Orders
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\refint\OrdersInSecondsMovile.dll
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\OrdersInSecondsMovile.pdb
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\ref\OrdersInSecondsMovile.dll
+C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile\obj\Debug\netstandard2.0\Views\PopUpRegister.xaml.g.cs

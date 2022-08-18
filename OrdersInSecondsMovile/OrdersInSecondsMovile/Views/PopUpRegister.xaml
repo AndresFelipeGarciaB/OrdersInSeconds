@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:controls="clr-namespace:OrdersInSecondsMovile.Controls"
+                 x:Class="OrdersInSecondsMovile.Views.PopUpRegister">
+    <popup:PopupPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0" Margin="0">
+            <Frame WidthRequest="270" HeightRequest="300" Padding="15" Background="Transparent">
+                <ScrollView>
+                <StackLayout>
+                    
+                    <Label 
+                    Text="Registro" 
+                    TextColor="#BAB5B5" 
+                    FontSize="22" 
+                    WidthRequest="300" 
+                    FontAttributes="Bold"/>
+                    
+                    <controls:StandardEntry
+                        Margin="0,0,0,20"
+                         WidthRequest="200"
+                        Padding="13"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#FF0000"
+                        BorderThickness="1"
+                        CornerRadius="8"                        
+                        Placeholder="Usuario"
+                        PlaceholderColor="#BAB5B5"
+                         Text="{Binding NewUser.user, Mode=TwoWay}"/>
+                    
+                    <controls:StandardEntry
+                        Margin="0,0,0,20"
+                         WidthRequest="200"
+                        Padding="13"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#FF0000"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        IsPassword ="True"
+                        Placeholder="Password"
+                        PlaceholderColor="#BAB5B5"
+                         Text="{Binding NewUser.Pass, Mode=TwoWay}"/>
+
+
+                    <Button 
+                    Text="Guardar" 
+                   WidthRequest="120" 
+                    CornerRadius="7" 
+                    BackgroundColor="#FF0000"
+                    HeightRequest="35" 
+                    TextColor="White"
+                    Command="{Binding BotonAgregar}"
+                    CommandParameter="cerrar"/>
+                    
+                </StackLayout>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+    </popup:PopupPage.Content>
+</popup:PopupPage>

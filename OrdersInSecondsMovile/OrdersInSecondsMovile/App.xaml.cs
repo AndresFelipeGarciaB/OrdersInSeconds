@@ -1,4 +1,5 @@
-﻿using OrdersInSecondsMovile.Services;
+﻿using OrdersInSecondsMovile.Repositories;
+using OrdersInSecondsMovile.Services;
 using OrdersInSecondsMovile.Views;
 using System;
 using Xamarin.Forms;
@@ -14,8 +15,25 @@ namespace OrdersInSecondsMovile
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new LoginPage(); //AppShell();
         }
+
+        private static RegisterRepository _registroRepository;
+
+        public static RegisterRepository RegistroRepository
+        {
+            get
+            {
+                if (_registroRepository == null)
+                {
+                    _registroRepository = new RegisterRepository();
+                }
+
+                return _registroRepository;
+            }
+
+        }
+
 
         protected override void OnStart()
         {

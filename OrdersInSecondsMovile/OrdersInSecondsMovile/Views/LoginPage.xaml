@@ -44,7 +44,8 @@
                         FontAttributes="Bold" 
                         FontSize="Medium" 
                         Text="LOGIN"
-                        TextColor="White" />
+                        TextColor="#BAB5B5" 
+                        />
                 </StackLayout>
 
 
@@ -57,13 +58,13 @@
                         Margin="0,0,0,10"
                         WidthRequest="200"
                         Padding="13"
-                        BackgroundColor="#4260A7"
-                        BorderColor="#FFFFFF"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#FF0000"
                         BorderThickness="1"
                         CornerRadius="8"
                         Placeholder="Usuario"
-                        PlaceholderColor="White"
-                         Text="{Binding InsertarUsuario.first_name, Mode=TwoWay}"/>
+                        PlaceholderColor="#BAB5B5"
+                        Text="{Binding User.user, Mode=TwoWay}"/>
 
                 </StackLayout>
 
@@ -74,16 +75,16 @@
                     Orientation="Horizontal">
                     <controls:StandardEntry
                         Margin="0,0,0,20"
-                         WidthRequest="200"
+                        WidthRequest="200"
                         Padding="13"
-                        BackgroundColor="#4260A7"
-                        BorderColor="#FFFFFF"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#FF0000"
                         BorderThickness="1"
                         CornerRadius="8"
                         IsPassword ="True"
                         Placeholder="Password"
-                        PlaceholderColor="White"
-                         Text="{Binding InsertarUsuario.first_name, Mode=TwoWay}"/>
+                        PlaceholderColor="#BAB5B5"
+                        Text="{Binding User.Pass, Mode=TwoWay}"/>
 
 
                 </StackLayout>
@@ -102,7 +103,7 @@
                     Orientation="Vertical" 
                     Margin="15">
                     <Button 
-                        BackgroundColor="Black" 
+                        BackgroundColor="#FF0000" 
                         CornerRadius="7" 
                         Text="LOGIN"
                         TextColor="#FFFF" 
@@ -132,8 +133,8 @@
                         FontAttributes="Bold"
                         VerticalOptions="Center" 
                         HorizontalOptions="End" 
-                        Command="{Binding ButtonCommand}" 
-                        CommandParameter="Registrar" >
+                        Command="{Binding LoginCommand}" 
+                        CommandParameter="Register" >
                        
                     </Button>
                     
