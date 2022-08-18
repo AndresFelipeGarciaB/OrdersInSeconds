@@ -18,18 +18,34 @@ namespace OrdersInSecondsMovile
             MainPage = new LoginPage(); //AppShell();
         }
 
-        private static RegisterRepository _registroRepository;
+        private static RegisterRepository _registerRepository;
 
-        public static RegisterRepository RegistroRepository
+        public static RegisterRepository RegisterRepository
         {
             get
             {
-                if (_registroRepository == null)
+                if (_registerRepository == null)
                 {
-                    _registroRepository = new RegisterRepository();
+                    _registerRepository = new RegisterRepository();
                 }
 
-                return _registroRepository;
+                return _registerRepository;
+            }
+
+        }
+
+        private static AddDataRepository _addDataRepository;
+
+        public static AddDataRepository AddDataRepository
+        {
+            get
+            {
+                if (_addDataRepository == null)
+                {
+                    _addDataRepository = new AddDataRepository();
+                }
+
+                return _addDataRepository;
             }
 
         }

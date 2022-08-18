@@ -7,6 +7,9 @@ namespace OrdersInSecondsMovile.Utils
 {
     public static class Constants
     {
+        public const string APIBASE = "https://fakestoreapi.com/";
+
+
         public const string DatabaseFilename = "OrdersInSecondsMovile.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =

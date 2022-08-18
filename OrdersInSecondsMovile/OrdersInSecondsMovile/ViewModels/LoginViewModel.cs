@@ -1,9 +1,13 @@
-﻿using OrdersInSecondsMovile.Models;
+﻿using Newtonsoft.Json;
+using OrdersInSecondsMovile.Models;
+using OrdersInSecondsMovile.Utils;
 using OrdersInSecondsMovile.Views;
+using RestSharp;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace OrdersInSecondsMovile.ViewModels
@@ -53,13 +57,26 @@ namespace OrdersInSecondsMovile.ViewModels
         {
             try
             {
-
-                var UsersSQLite  = App.RegistroRepository.GetUsuario(User);
+                var UsersSQLite  = App.RegisterRepository.GetUsuario(User);
                 if (UsersSQLite != null)
                 {
                     if(UsersSQLite.user == User.user && UsersSQLite.Pass == User.Pass)
                     {
-                        Application.Current.MainPage = new AppShell();
+                        bool thereData = App.AddDataRepository.GetAll();
+                        if (Connectivity.NetworkAccess == NetworkAccess.Internet)
+                        {
+                            downloadData();
+                            Application.Current.MainPage = new AppShell();
+                        }
+                        else if(thereData == false && Connectivity.NetworkAccess != NetworkAccess.Internet)
+                        {
+                            Application.Current.MainPage.DisplayAlert("Información", "Necesita conexión a internet.", "Ok");
+                        }
+                        else
+                        {
+                            Application.Current.MainPage.DisplayAlert("Información", "En este momento usted no tiene internet, pero se puede utilizar con normalidad la App.", "Ok");
+                            Application.Current.MainPage = new AppShell();
+                        }                       
                     }
                 }
                 else
@@ -77,7 +94,59 @@ namespace OrdersInSecondsMovile.ViewModels
 
         }
 
+        private void downloadData()
+        {
+            try
+            {
+                var client = new RestClient(Constants.APIBASE);                
+                var request = new RestRequest("products", Method.Get);
+                var response = client.Get(request);
 
+                if (!string.IsNullOrEmpty(response.Content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var mensaje = JsonConvert.DeserializeObject<List<DataApiModel>>(response.Content);
+                        if(!object.ReferenceEquals(null, mensaje))
+                        {
+                            InsertDataSQLite(mensaje);
+                        }
+                        else
+                        {
+                            Application.Current.MainPage.DisplayAlert("Hay una indisponibilidad en la plataforma, por favor intente mas tarde.", "", "Ok");
+                        }
+                    }
+                    else
+                    {
+                        Application.Current.MainPage.DisplayAlert("Error "+ response.StatusCode.ToString() +":", "  "+ response.ErrorMessage, "Ok");
+                    }
+                }
+                
+
+
+            }
+            catch(Exception ex)
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "En este momento se presenta una indisponibilidad, por favor intente mas tarde.", "Ok");
+            }
+        }
+
+        private  Response InsertDataSQLite(List<DataApiModel> data)
+        {
+            Response re = new Response();
+            try
+            {
+                foreach (var item in data)
+                {
+                    App.AddDataRepository.AddOrUpdate(item);                    
+                }                
+
+            } catch(Exception ex)
+            {
+                Application.Current.MainPage.DisplayAlert("Error", "En este momento se presenta una indisponibilidad, por favor intente mas tarde.", "Ok");
+            }
+            return re;
+        }
 
         #endregion
     }

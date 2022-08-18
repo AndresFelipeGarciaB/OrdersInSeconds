@@ -43,12 +43,12 @@ namespace OrdersInSecondsMovile.ViewModels
             {
                 if(NewUser != null)
                 {
-                    App.RegistroRepository.AddOrUpdate(NewUser);
-                    App.Current.MainPage.DisplayAlert("Usuario agregado", App.RegistroRepository.StatusMessage, "Aceptar");
+                    App.RegisterRepository.AddOrUpdate(NewUser);
+                    App.Current.MainPage.DisplayAlert("Usuario agregado", App.RegisterRepository.StatusMessage, "Aceptar");
                 }
                 else
                 {
-                    App.Current.MainPage.DisplayAlert("Usuario No agregado", App.RegistroRepository.StatusMessage, "Aceptar");
+                    App.Current.MainPage.DisplayAlert("Usuario No agregado", App.RegisterRepository.StatusMessage, "Aceptar");
                 }
                 
                 
