@@ -13,10 +13,17 @@ namespace OrdersInSecondsMovile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListProductsView : ContentPage
     {
+        ListProductsViewModel _viewModel;
         public ListProductsView()
         {
             InitializeComponent();
-            BindingContext = new ListProductsViewModel();
+            ;
+            BindingContext = _viewModel = new ListProductsViewModel();
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
     }
 }

@@ -78,6 +78,10 @@ namespace OrdersInSecondsMovile.ViewModels
                             Application.Current.MainPage = new AppShell();
                         }                       
                     }
+                    else
+                    {
+                        Application.Current.MainPage.DisplayAlert("Información", "Password incorrecto.", "Ok");
+                    }
                 }
                 else
                 {

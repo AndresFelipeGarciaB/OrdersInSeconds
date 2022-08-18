@@ -121,6 +121,19 @@ namespace OrdersInSecondsMovile.Repositories
             return null ;
         }
 
+        public DataApiModelSQLite GetProduct(string Title)
+        {
+            try
+            {
+                return connection.Table<DataApiModelSQLite>().FirstOrDefault(x => x.title == Title);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null;
+        }
+
 
         #endregion
     }

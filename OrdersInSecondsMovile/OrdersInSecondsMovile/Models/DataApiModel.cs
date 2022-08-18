@@ -10,6 +10,7 @@ namespace OrdersInSecondsMovile.Models
     {
         public double rate { get; set; }
         public int count { get; set; }
+        public string starImage { get; set; }
     }
 
     public class DataApiModel

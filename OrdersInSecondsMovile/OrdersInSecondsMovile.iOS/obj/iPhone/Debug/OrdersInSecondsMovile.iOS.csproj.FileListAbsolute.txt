@@ -76,3 +76,4 @@ C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\Orders
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile.iOS\obj\iPhone\Debug\OrdersInSecondsMovile.iOS.csproj.CopyComplete
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile.iOS\obj\iPhone\Debug\OrdersInSecondsMovile.iOS.exe
 C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile.iOS\obj\iPhone\Debug\OrdersInSecondsMovile.iOS.pdb
+C:\Users\USUARIO\source\repos\OrdersInSecondsMovile\OrdersInSecondsMovile\OrdersInSecondsMovile.iOS\bin\iPhone\Debug\Xamarin.Forms.PancakeView.dll

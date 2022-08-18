@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrdersInSecondsMovile.Views.DetailProductsView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                <Image Grid.Row="1"  
+                        Grid.Column="0"
+                        HeightRequest="200"
+                        WidthRequest="5"
+                        Source="{Binding Image }"/>
+
+                <Label Grid.Row="0"  
+                    Grid.Column="1"
+                    Text="{Binding NameProduct}" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="20"
+                    FontAttributes="Bold"  />
+
+                
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                    TranslationX="0"
+                    TranslationY="20"
+                    Text="Price" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="14"
+                    FontAttributes="Bold"  />
+                
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                    TranslationY="20"
+                    TranslationX="80"
+                    Text="{Binding Price}" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="13"
+                    FontAttributes="Bold"  />
+
+
+
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                    TranslationX="0"
+                    TranslationY="70"
+                    Text="Categoria" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="13" 
+                       FontAttributes="Bold"/>
+                
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                    TranslationY="70"
+                    TranslationX="80"
+                    Text="{Binding Categoria }" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="13" />
+
+
+
+
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                    TranslationX="0"
+                    TranslationY="120"
+                    Text="Rating" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="13" />
+                
+                <Label Grid.Row="1"  
+                    Grid.Column="1"
+                   TranslationX="80"
+                    TranslationY="120"
+                    Text="{Binding Rating }" 
+                    LineBreakMode="NoWrap"
+                    Style="{StaticResource SecundaryText}"
+                    FontSize="13" />
+
+                
+
+
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

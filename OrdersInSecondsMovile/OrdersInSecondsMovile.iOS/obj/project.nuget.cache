@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IP2tWej32ipu7xGmVJ3LHjsRVvRa1cCIZjS7yf9b2GEu/JYLe71rKLOKxdZcmY841HATVI4LJSOj9KnTbv7blg==",
+  "dgSpecHash": "pLvlMfBuZ56OYjqpGl/7DioQqZw3ZoJM8QKk6utrpTdESDfoHWdmzxxa7r20BtFap1hV0jnF0BiduzFaSG7FdA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\source\\repos\\OrdersInSecondsMovile\\OrdersInSecondsMovile\\OrdersInSecondsMovile.iOS\\OrdersInSecondsMovile.iOS.csproj",
   "expectedPackageFiles": [
@@ -13,13 +13,15 @@
     "C:\\Users\\USUARIO\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\USUARIO\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\USUARIO\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
   ],
   "logs": []
 }

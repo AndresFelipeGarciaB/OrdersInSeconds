@@ -12,6 +12,9 @@ namespace OrdersInSecondsMovile
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+
+            Routing.RegisterRoute(nameof(DetailProductsView), typeof(DetailProductsView));
+            
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 

@@ -1,4 +1,5 @@
 ﻿using OrdersInSecondsMovile.Models;
+using OrdersInSecondsMovile.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,34 +12,26 @@ namespace OrdersInSecondsMovile.ViewModels
 {
     public class ListProductsViewModel : BaseViewModel
     {
-        private DataApiModelSQLite _selectedItem;
+        private DataApiModel _selectedItem;
         #region Commands
 
-        public ObservableCollection<DataApiModelSQLite> Items { get; }
+        public ObservableCollection<DataApiModel> Items { get; }
         public Command LoadItemsCommand { get; }
         
-        public Command<DataApiModelSQLite> ItemTapped { get; }
+        public Command<DataApiModel> ItemTapped { get; }
         #endregion
 
         #region Property
-        public DataApiModelSQLite SelectedItem
-        {
-            get => _selectedItem;
-            set
-            {
-                SetProperty(ref _selectedItem, value);
-                OnItemSelected(value);
-            }
-        }
+        
         #endregion
 
         public ListProductsViewModel()
         {
             
-            Items = new ObservableCollection<DataApiModelSQLite>();
+            Items = new ObservableCollection<DataApiModel>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<DataApiModelSQLite>(OnItemSelected);
+            ItemTapped = new Command<DataApiModel>(OnItemSelected);
 
             
         }
@@ -51,10 +44,26 @@ namespace OrdersInSecondsMovile.ViewModels
             {
                 Items.Clear();
                 
-                var items = await Task.FromResult(App.AddDataRepository.GetAllData()); ;
+                var items = App.AddDataRepository.GetAllData(); 
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    var itemRating = new RatingModel()
+                    {
+                        rate = item.rate,
+                        count = item.count,
+                        starImage = (item.rate >= 4.0 ? "iconStar.png" : String.Empty)
+                    };            
+
+                    var itemModel = new DataApiModel() { 
+                                title= item.title,
+                                price = item.price,
+                                description = item.description,
+                                category = item.category,
+                                image = item.image,
+                                rating = itemRating
+                    };
+                    
+                    Items.Add(itemModel);
                 }
             }
             catch (Exception ex)
@@ -72,15 +81,29 @@ namespace OrdersInSecondsMovile.ViewModels
             IsBusy = true;
             SelectedItem = null;
         }
+        public DataApiModel SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                SetProperty(ref _selectedItem, value);
+                OnItemSelected(value);
+            }
+        }
 
 
-        async void OnItemSelected(DataApiModelSQLite item)
+        async void OnItemSelected(DataApiModel item)
         {
             if (item == null)
                 return;
-
-            // This will push the ItemDetailPage onto the navigation stack
-            //await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
+            try
+            {
+                await Shell.Current.GoToAsync($"{nameof(DetailProductsView)}?{nameof(DetailProductsVieModel.Title)}={item.title}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error: " + ex);
+            }  
         }
     }
 }

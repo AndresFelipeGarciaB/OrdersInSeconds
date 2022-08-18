@@ -5,9 +5,10 @@
              xmlns:model="clr-namespace:OrdersInSecondsMovile.Models" 
              xmlns:controls="clr-namespace:OrdersInSecondsMovile.Controls"
              x:Class="OrdersInSecondsMovile.Views.ListProductsView"
-             Title="Productos">
+             Title="Productos"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
-    
+
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -36,6 +37,7 @@
                     Text="{Binding User.user, Mode=TwoWay}"/>                
 
                 <Button 
+                     Grid.Column="2"
                     BackgroundColor="{StaticResource Primary}" 
                     CornerRadius="7" 
                     TextColor="#FFFF" 
@@ -50,34 +52,68 @@
             </StackLayout>
 
             <RefreshView Grid.Row="2"  x:DataType="local:ListProductsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-                <CollectionView Grid.Row="2" x:Name="ItemsListView"
-            ItemsSource="{Binding Items}"
-            SelectionMode="None">
+                <CollectionView Grid.Row="2" x:Name="ItemsListView" ItemsSource="{Binding Items}" SelectionMode="None">   
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="10" x:DataType="model:DataApiModelSQLite">
+                            <StackLayout Padding="10" x:DataType="model:DataApiModel">
+                                <Grid RowSpacing="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                                    
+                                    <Frame Margin="0,0,0,0" HeightRequest="150">
+                                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" >
+                                            
+                                            
+                                            <Image Grid.Row="2"                                                 
+                                                Source="{Binding image}"                                       
+                                                HeightRequest="50" />   
+                                            
+                                            <Label Grid.Row="2"  
+                                                    Grid.Column="1"
+                                               Text="{Binding category}" 
+                                                LineBreakMode="NoWrap"
+                                                Style="{StaticResource SecundaryText}"
+                                                FontSize="13" />
+                                            
+                                            <Label Grid.Row="3"  
+                                                Grid.Column="1"
+                                                Text="Precio" 
+                                                LineBreakMode="NoWrap"
+                                                Style="{StaticResource SecundaryText}"
+                                                FontSize="13"
+                                                FontAttributes="Bold"  />
+                                            
+                                            <Label Grid.Row="3"  
+                                                Grid.Column="2"
+                                                TranslationX="-56"
+                                                Text="{Binding price }" 
+                                                LineBreakMode="NoWrap"
+                                                Style="{StaticResource SecundaryText}"
+                                                FontSize="13" />
+                                            <StackLayout Grid.Row="2"   Grid.Column="2" WidthRequest="80" HeightRequest="70">
+                                            <Image Grid.Row="2"  
+                                                    Grid.Column="2"
+                                                    HeightRequest="25"
+                                                   WidthRequest="5"
+                                                   Source="{Binding rating.starImage }"/>
+                                            </StackLayout>
+                                            <!-- <Label Grid.Row="3" Style="{StaticResource DivisionLine}"/>-->
+                                        </Grid>
+                                    </Frame>
+                                    <PanCake:PancakeView Grid.Row="0" CornerRadius="20,0,0,30" TranslationY="90" TranslationX="30" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="100" HeightRequest="35">
+                                        <Grid RowDefinitions="*" BackgroundColor="{StaticResource Primary}" Padding="15,5" >
+                                            <Label Grid.Row="0" Text="{Binding title}" FontAttributes="Bold" TextColor="White" FontSize="10" />
+                                        </Grid>
+                                    </PanCake:PancakeView>
 
-                                <Image Source="{Binding image}"                                       
-                                       HeightRequest="40"   
-                                        />
-
-                                <Label Text="{Binding title}" 
-                        LineBreakMode="NoWrap" 
-                        Style="{DynamicResource ListItemTextStyle}" 
-                        FontSize="16" />
-
-                                <Label Text="{Binding description}" 
-                        LineBreakMode="NoWrap"
-                        Style="{DynamicResource ListItemDetailTextStyle}"
-                        FontSize="13" />
-
+                                </Grid>
+                                
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer 
-                            NumberOfTapsRequired="1"
-                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
-                            CommandParameter="{Binding .}">
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ListProductsViewModel}}, Path=ItemTapped}"		
+                                        CommandParameter="{Binding .}">
                                     </TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>
+                                
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
